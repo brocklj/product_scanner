@@ -5,6 +5,7 @@ import android.content.res.Resources.NotFoundException
 import android.icu.text.SimpleDateFormat
 import android.os.Environment
 import android.os.Looper
+import android.util.Log
 import cz.broc.capriscan.restapi.api.IProduct
 import cz.broc.productscanner.db.ListItemDao
 import cz.broc.productscanner.db.entities.ListItemEntity
@@ -18,6 +19,7 @@ import retrofit2.awaitResponse
 import java.io.File
 import java.io.FileWriter
 import java.io.IOException
+import java.util.Locale
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -98,42 +100,43 @@ class ListDataSource @Inject constructor(
         return count
     }
 
-   suspend fun exportDbIntoCSV(userId: String, items: List<ListItem>) {
+    suspend fun exportDbIntoCSV(context: Context, userId: String, items: List<ListItem>) {
+        val dataToExport = mutableListOf<String>()
+        val delimiter = ";"
 
-           val dataToExport: MutableList<String> = ArrayList()
-       /**
-        * TODO: Přídat datupd dd.MM.YYYY
-        *  filtrovat jen naskenované!!!
+        // Filtrovat pouze naskenované položky (příklad: pokud count > 0)
+        val filteredItems = items.filter { it.count > 0 }
 
-        */
-       items?.forEach {
-           val date = SimpleDateFormat("dd.MM.YYYY").format(it.datupd)
-           val time =  SimpleDateFormat("HH:mm:ss").format(it.datupd)
-           dataToExport.add("${it.ean}${delimiter}${it.upc}${delimiter}${it.count.toString()}${delimiter}${date}${delimiter}${time}")
-       }
+        filteredItems.forEach {
+            val date = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).format(it.datupd)
+            val time = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(it.datupd)
+            dataToExport.add("${it.ean}$delimiter${it.upc}$delimiter${it.count}$delimiter$date$delimiter$time")
+        }
 
-       Environment.getExternalStoragePublicDirectory("scanner").mkdir()
-       val directory: File = Environment.getExternalStoragePublicDirectory("scanner")
-           val fileName = "${userId}_${System.currentTimeMillis()}.csv"
-           val file = File(directory, fileName)
+        // Použij privátní veřejnou složku aplikace
+        val directory = File(context.getExternalFilesDir(null), "scanner")
+        if (!directory.exists()) {
+            directory.mkdirs()
+        }
 
-           try {
-               if (Looper.myLooper() == null) {
-                   Looper.prepare()
-               }
-               val writer = FileWriter(file)
-               for (data in dataToExport) {
-                   withContext(Dispatchers.IO) {
-                       writer.write(data + "\n")
-                   }
-               }
-               writer.close()
-           } catch (e: IOException) {
-               print(e.message)
-               e.printStackTrace()
-               throw e
-           }
+        val fileName = "${userId}_${System.currentTimeMillis()}.csv"
+        val file = File(directory, fileName)
+
+        try {
+            withContext(Dispatchers.IO) {
+                FileWriter(file).use { writer ->
+                    dataToExport.forEach { line ->
+                        writer.write("$line\n")
+                    }
+                }
+            }
+            Log.d("Export", "Soubor uložen: ${file.absolutePath}")
+        } catch (e: IOException) {
+            Log.e("Export", "Chyba při exportu CSV: ${e.message}")
+            throw e
+        }
     }
+
 
     suspend fun deleteDb() {
         listItemDao.deleteAll()
