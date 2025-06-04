@@ -141,7 +141,10 @@ class ListViewModel @Inject constructor(
                     }
                 }
                 else -> {
-                    Toast.makeText(context, exception.message, Toast.LENGTH_LONG).show()
+                    viewModelScope.launch {
+                        Toast.makeText(context, exception.message, Toast.LENGTH_LONG).show()
+                        // TODO: redirect to start screen
+                    }
                 }
             }
             Log.e("ListViewModel: loadFileIntoDb", exception.toString())
@@ -156,7 +159,7 @@ class ListViewModel @Inject constructor(
     fun onExportClick(listActity: Activity): Unit {
         viewModelScope.launch(Dispatchers.IO + sourceFileErrorHandler) {
             val l = listDataSource.getAllLScannedItems().firstOrNull()
-            listDataSource.exportDbIntoCSV(userId.value, l!!)
+            listDataSource.exportDbIntoCSV(context, userId.value, l!!)
                 viewModelScope.launch {
                     Toast.makeText(context, "Export success", Toast.LENGTH_LONG).show()
                     showExportFinishedDialog(listActity as ListActivity)
