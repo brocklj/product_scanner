@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="upc_height_half">25dp</dimen>
+    <dimen name="upc_height_full">50dp</dimen>
+    <dimen name="image_height_half">55dp</dimen>
+    <dimen name="image_height_full">110dp</dimen>
+</resources>

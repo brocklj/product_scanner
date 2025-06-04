@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="labeled_text_attributes">
+        <attr name="label" format="string" />
+        <attr name="text" format="string" />
+        <attr name="labelColor" format="integer" />
+        <attr name="labelBackgroundColor" format="integer" />
+        <attr name="textColor" format="integer" />
+        <attr name="textBackgroundColor" format="integer" />
+    </declare-styleable>
+</resources>

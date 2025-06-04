@@ -1,0 +1,426 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "287c4f95b057c83f457480730a1e3ab9",
+    "entities": [
+      {
+        "tableName": "StockItemDetail",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `wayId` INTEGER NOT NULL, `dptId` INTEGER NOT NULL, `stockId` INTEGER, `ind` TEXT, `name` TEXT, `type` TEXT, `upc` TEXT, `size` TEXT, `qttyWhAll` INTEGER, `qttyExp` INTEGER, `datins` TEXT, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wayId",
+            "columnName": "wayId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dptId",
+            "columnName": "dptId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stockId",
+            "columnName": "stockId",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ind",
+            "columnName": "ind",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "upc",
+            "columnName": "upc",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "size",
+            "columnName": "size",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "qttyWhAll",
+            "columnName": "qttyWhAll",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "qttyExp",
+            "columnName": "qttyExp",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "datins",
+            "columnName": "datins",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_StockItemDetail_wayId_upc",
+            "unique": true,
+            "columnNames": [
+              "wayId",
+              "upc"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_StockItemDetail_wayId_upc` ON `${TABLE_NAME}` (`wayId`, `upc`)"
+          },
+          {
+            "name": "index_StockItemDetail_wayId_stockId_ind_name_dptId",
+            "unique": false,
+            "columnNames": [
+              "wayId",
+              "stockId",
+              "ind",
+              "name",
+              "dptId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_StockItemDetail_wayId_stockId_ind_name_dptId` ON `${TABLE_NAME}` (`wayId`, `stockId`, `ind`, `name`, `dptId`)"
+          },
+          {
+            "name": "index_StockItemDetail_dptId",
+            "unique": false,
+            "columnNames": [
+              "dptId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_StockItemDetail_dptId` ON `${TABLE_NAME}` (`dptId`)"
+          },
+          {
+            "name": "index_StockItemDetail_qttyExp",
+            "unique": false,
+            "columnNames": [
+              "qttyExp"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_StockItemDetail_qttyExp` ON `${TABLE_NAME}` (`qttyExp`)"
+          },
+          {
+            "name": "index_StockItemDetail_qttyWhAll",
+            "unique": false,
+            "columnNames": [
+              "qttyWhAll"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_StockItemDetail_qttyWhAll` ON `${TABLE_NAME}` (`qttyWhAll`)"
+          },
+          {
+            "name": "index_StockItemDetail_upc",
+            "unique": true,
+            "columnNames": [
+              "upc"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_StockItemDetail_upc` ON `${TABLE_NAME}` (`upc`)"
+          },
+          {
+            "name": "index_StockItemDetail_upc_qttyWhAll",
+            "unique": false,
+            "columnNames": [
+              "upc",
+              "qttyWhAll"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_StockItemDetail_upc_qttyWhAll` ON `${TABLE_NAME}` (`upc`, `qttyWhAll`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "RfidList",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`rfidTag` TEXT NOT NULL, `btId` TEXT NOT NULL, `type` TEXT NOT NULL, `upc` TEXT NOT NULL, `datins` TEXT, `lastSeen` TEXT, `seenCnt` INTEGER, `missedCnt` INTEGER, PRIMARY KEY(`rfidTag`))",
+        "fields": [
+          {
+            "fieldPath": "rfidTag",
+            "columnName": "rfidTag",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "btId",
+            "columnName": "btId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "upc",
+            "columnName": "upc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "datins",
+            "columnName": "datins",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastSeen",
+            "columnName": "lastSeen",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "seenCnt",
+            "columnName": "seenCnt",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "missedCnt",
+            "columnName": "missedCnt",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "rfidTag"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_RfidList_rfidTag_type",
+            "unique": false,
+            "columnNames": [
+              "rfidTag",
+              "type"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_RfidList_rfidTag_type` ON `${TABLE_NAME}` (`rfidTag`, `type`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Department",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `dpt` TEXT NOT NULL, `dptName` TEXT NOT NULL, `bu` TEXT NOT NULL, `rfid` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dpt",
+            "columnName": "dpt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dptName",
+            "columnName": "dptName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bu",
+            "columnName": "bu",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rfid",
+            "columnName": "rfid",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_Department_id_dpt_dptName",
+            "unique": false,
+            "columnNames": [
+              "id",
+              "dpt",
+              "dptName"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Department_id_dpt_dptName` ON `${TABLE_NAME}` (`id`, `dpt`, `dptName`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "WayList",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`wayId` INTEGER NOT NULL, `dptId` INTEGER, `ind` TEXT NOT NULL, `name` TEXT NOT NULL, `qttyScanned` INTEGER NOT NULL, `qttyExpected` INTEGER NOT NULL, `qttyDiff` INTEGER, `datupd` INTEGER, PRIMARY KEY(`wayId`))",
+        "fields": [
+          {
+            "fieldPath": "wayId",
+            "columnName": "wayId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dptId",
+            "columnName": "dptId",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ind",
+            "columnName": "ind",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "qttyScanned",
+            "columnName": "qttyScanned",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "qttyExpected",
+            "columnName": "qttyExpected",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "qttyDiff",
+            "columnName": "qttyDiff",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "datupd",
+            "columnName": "datupd",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "wayId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_WayList_wayId_qttyScanned_datupd",
+            "unique": false,
+            "columnNames": [
+              "wayId",
+              "qttyScanned",
+              "datupd"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_WayList_wayId_qttyScanned_datupd` ON `${TABLE_NAME}` (`wayId`, `qttyScanned`, `datupd`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Ean2Upc",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `ean` TEXT NOT NULL, `upc` TEXT NOT NULL, `qtty` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ean",
+            "columnName": "ean",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "upc",
+            "columnName": "upc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "qtty",
+            "columnName": "qtty",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_Ean2Upc_ean",
+            "unique": false,
+            "columnNames": [
+              "ean"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Ean2Upc_ean` ON `${TABLE_NAME}` (`ean`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [
+      {
+        "viewName": "StockItemView",
+        "createSql": "CREATE VIEW `${VIEW_NAME}` AS SELECT StockItemDetail.stockId as stockId, StockItemDetail.wayId as wayId, StockItemDetail.ind as ind, StockItemDetail.name as name, StockItemDetail.dptId as dptId, MAX(StockItemDetail.datins) as datins, ifnull(SUM(StockItemDetail.qttyWhAll), 0) as qttyWhAll, ifnull(SUM(StockItemDetail.qttyExp), 0) as qttyExp  FROM StockItemDetail where StockItemDetail.qttyExp > 0 or StockItemDetail.qttyWhAll is not null GROUP BY StockItemDetail.wayId, StockItemDetail.ind, StockItemDetail.name, StockItemDetail.dptId ORDER BY datins DESC"
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '287c4f95b057c83f457480730a1e3ab9')"
+    ]
+  }
+}

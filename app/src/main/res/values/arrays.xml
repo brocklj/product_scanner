@@ -1,0 +1,296 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="reply_entries">
+        <item>Reply</item>
+        <item>Reply to all</item>
+    </string-array>
+
+    <string-array name="reply_values">
+        <item>reply</item>
+        <item>reply_all</item>
+    </string-array>
+
+    <array name="assets_images_002">
+        <item>@drawable/asset_002</item>
+    </array>
+    <array name="assets_images_003">
+        <item>@drawable/asset_003</item>
+    </array>
+    <array name="assets_images_005">
+        <item>@drawable/asset_005</item>
+    </array>
+    <array name="assets_images_006">
+        <item>@drawable/asset_006</item>
+    </array>
+    <array name="assets_images_009">
+        <item>@drawable/asset_009</item>
+    </array>
+    <array name="assets_images_010">
+        <item>@drawable/asset_010</item>
+    </array>
+    <array name="assets_images_011">
+        <item>@drawable/asset_011</item>
+    </array>
+    <array name="assets_images_012">
+        <item>@drawable/asset_012</item>
+    </array>
+    <array name="assets_images_013">
+        <item>@drawable/asset_013</item>
+    </array>
+    <array name="assets_images_014">
+        <item>@drawable/asset_014</item>
+    </array>
+    <array name="assets_images_015">
+        <item>@drawable/asset_015</item>
+    </array>
+    <array name="assets_images_016">
+        <item>@drawable/asset_016</item>
+    </array>
+    <array name="assets_images_017">
+        <item>@drawable/asset_017</item>
+    </array>
+    <array name="assets_images_018">
+        <item>@drawable/asset_018</item>
+    </array>
+    <array name="assets_images_019">
+        <item>@drawable/asset_019</item>
+    </array>
+    <array name="assets_images_020">
+        <item>@drawable/asset_020</item>
+    </array>
+    <array name="assets_images_021">
+        <item>@drawable/asset_021</item>
+    </array>
+    <array name="assets_images_022">
+        <item>@drawable/asset_022</item>
+    </array>
+    <array name="assets_images_023">
+        <item>@drawable/asset_023</item>
+    </array>
+    <array name="assets_images_024">
+        <item>@drawable/asset_024</item>
+    </array>
+    <array name="assets_images_025">
+        <item>@drawable/asset_025</item>
+    </array>
+    <array name="assets_images_026">
+        <item>@drawable/asset_026</item>
+    </array>
+    <array name="assets_images_027">
+        <item>@drawable/asset_027</item>
+    </array>
+    <array name="assets_images_028">
+        <item>@drawable/asset_028</item>
+    </array>
+    <array name="assets_images_029">
+        <item>@drawable/asset_029</item>
+    </array>
+    <array name="assets_images_030">
+        <item>@drawable/asset_030</item>
+    </array>
+    <array name="assets_images_031">
+        <item>@drawable/asset_031</item>
+    </array>
+    <array name="assets_images_032">
+        <item>@drawable/asset_032</item>
+    </array>
+    <array name="assets_images_033">
+        <item>@drawable/asset_033</item>
+    </array>
+    <array name="assets_images_034">
+        <item>@drawable/asset_034</item>
+    </array>
+    <array name="assets_images_035">
+        <item>@drawable/asset_035</item>
+    </array>
+    <array name="assets_images_036">
+        <item>@drawable/asset_036</item>
+    </array>
+    <array name="assets_images_037">
+        <item>@drawable/asset_037</item>
+    </array>
+    <array name="assets_images_038">
+        <item>@drawable/asset_038</item>
+    </array>
+    <array name="assets_images_039">
+        <item>@drawable/asset_039</item>
+    </array>
+    <array name="assets_images_040">
+        <item>@drawable/asset_040</item>
+    </array>
+    <array name="assets_images_041">
+        <item>@drawable/asset_041</item>
+    </array>
+    <array name="assets_images_042">
+        <item>@drawable/asset_042</item>
+    </array>
+    <array name="assets_images_043">
+        <item>@drawable/asset_043</item>
+    </array>
+    <array name="assets_images_044">
+        <item>@drawable/asset_044</item>
+    </array>
+    <array name="assets_images_045">
+        <item>@drawable/asset_045</item>
+    </array>
+    <array name="assets_images_046">
+        <item>@drawable/asset_046</item>
+    </array>
+    <array name="assets_images_047">
+        <item>@drawable/asset_047</item>
+    </array>
+    <array name="assets_images_048">
+        <item>@drawable/asset_048</item>
+    </array>
+    <array name="assets_images_049">
+        <item>@drawable/asset_049</item>
+    </array>
+    <array name="assets_images_050">
+        <item>@drawable/asset_050</item>
+    </array>
+    <array name="assets_images_051">
+        <item>@drawable/asset_051</item>
+    </array>
+    <array name="assets_images_052">
+        <item>@drawable/asset_052</item>
+    </array>
+    <array name="assets_images_053">
+        <item>@drawable/asset_053</item>
+    </array>
+    <array name="assets_images_054">
+        <item>@drawable/asset_054</item>
+    </array>
+    <array name="assets_images_055">
+        <item>@drawable/asset_055</item>
+    </array>
+    <array name="assets_images_056">
+        <item>@drawable/asset_056</item>
+    </array>
+    <array name="assets_images_057">
+        <item>@drawable/asset_057</item>
+    </array>
+    <array name="assets_images_058">
+        <item>@drawable/asset_058_01</item>
+        <item>@drawable/asset_058_02</item>
+    </array>
+    <array name="assets_images_059">
+        <item>@drawable/asset_059</item>
+    </array>
+    <array name="assets_images_060">
+        <item>@drawable/asset_060</item>
+    </array>
+    <array name="assets_images_061">
+        <item>@drawable/asset_061</item>
+    </array>
+    <array name="assets_images_062">
+        <item>@drawable/asset_062</item>
+    </array>
+    <array name="assets_images_063">
+        <item>@drawable/asset_063</item>
+    </array>
+    <array name="assets_images_064">
+        <item>@drawable/asset_064</item>
+    </array>
+    <array name="assets_images_065">
+        <item>@drawable/asset_065</item>
+    </array>
+    <array name="assets_images_066">
+        <item>@drawable/asset_066</item>
+    </array>
+    <array name="assets_images_067">
+        <item>@drawable/asset_067</item>
+    </array>
+    <array name="assets_images_068">
+        <item>@drawable/asset_068</item>
+    </array>
+    <array name="assets_images_069">
+        <item>@drawable/asset_069</item>
+    </array>
+    <array name="assets_images_070">
+        <item>@drawable/asset_070</item>
+    </array>
+    <array name="assets_images_071">
+        <item>@drawable/asset_071</item>
+    </array>
+    <array name="assets_images_072">
+        <item>@drawable/asset_072</item>
+    </array>
+    <array name="assets_images_074">
+        <item>@drawable/asset_074</item>
+    </array>
+    <array name="assets_images_075">
+        <item>@drawable/asset_075</item>
+    </array>
+    <array name="assets_images_076">
+        <item>@drawable/asset_076_01</item>
+        <item>@drawable/asset_076_02</item>
+        <item>@drawable/asset_076_03</item>
+        <item>@drawable/asset_076_04</item>
+        <item>@drawable/asset_076_05</item>
+        <item>@drawable/asset_076_06</item>
+        <item>@drawable/asset_076_07</item>
+        <item>@drawable/asset_076_08</item>
+        <item>@drawable/asset_076_09</item>
+        <item>@drawable/asset_076_10</item>
+        <item>@drawable/asset_076_11</item>
+    </array>
+    <array name="assets_images_077">
+        <item>@drawable/asset_077_01</item>
+        <item>@drawable/asset_077_02</item>
+        <item>@drawable/asset_077_03</item>
+        <item>@drawable/asset_077_04</item>
+        <item>@drawable/asset_077_05</item>
+        <item>@drawable/asset_077_06</item>
+        <item>@drawable/asset_077_07</item>
+        <item>@drawable/asset_077_08</item>
+    </array>
+    <array name="assets_images_078">
+        <item>@drawable/asset_078_01</item>
+        <item>@drawable/asset_078_02</item>
+        <item>@drawable/asset_078_03</item>
+    </array>
+    <array name="assets_images_079">
+        <item>@drawable/asset_079_01</item>
+        <item>@drawable/asset_079_02</item>
+        <item>@drawable/asset_079_03</item>
+        <item>@drawable/asset_079_04</item>
+        <item>@drawable/asset_079_05</item>
+        <item>@drawable/asset_079_06</item>
+        <item>@drawable/asset_079_07</item>
+        <item>@drawable/asset_079_08</item>
+        <item>@drawable/asset_079_09</item>
+        <item>@drawable/asset_079_10</item>
+        <item>@drawable/asset_079_11</item>
+        <item>@drawable/asset_079_12</item>
+        <item>@drawable/asset_079_13</item>
+        <item>@drawable/asset_079_14</item>
+        <item>@drawable/asset_079_15</item>
+        <item>@drawable/asset_079_16</item>
+        <item>@drawable/asset_079_17</item>
+        <item>@drawable/asset_079_18</item>
+        <item>@drawable/asset_079_19</item>
+        <item>@drawable/asset_079_20</item>
+    </array>
+    <array name="assets_images_080">
+        <item>@drawable/asset_080_01</item>
+        <item>@drawable/asset_080_02</item>
+        <item>@drawable/asset_080_03</item>
+        <item>@drawable/asset_080_04</item>
+        <item>@drawable/asset_080_05</item>
+        <item>@drawable/asset_080_06</item>
+        <item>@drawable/asset_080_07</item>
+        <item>@drawable/asset_080_08</item>
+        <item>@drawable/asset_080_09</item>
+        <item>@drawable/asset_080_10</item>
+        <item>@drawable/asset_080_11</item>
+        <item>@drawable/asset_080_12</item>
+    </array>
+    <array name="assets_images_081">
+        <item>@drawable/asset_081</item>
+    </array>
+    <array name="assets_images_082">
+        <item>@drawable/asset_082_01</item>
+        <item>@drawable/asset_082_02</item>
+        <item>@drawable/asset_082_03</item>
+    </array>
+</resources>

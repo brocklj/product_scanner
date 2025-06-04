@@ -1,0 +1,80 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "5e40c7cccb84642f6aff1688afe7d898",
+    "entities": [
+      {
+        "tableName": "ListItem",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ean` TEXT NOT NULL, `upc` TEXT NOT NULL, `name` TEXT NOT NULL, `count` INTEGER NOT NULL, `unit` TEXT NOT NULL, `datins` INTEGER, `datupd` INTEGER, PRIMARY KEY(`ean`))",
+        "fields": [
+          {
+            "fieldPath": "ean",
+            "columnName": "ean",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "upc",
+            "columnName": "upc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "count",
+            "columnName": "count",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unit",
+            "columnName": "unit",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "datins",
+            "columnName": "datins",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "datupd",
+            "columnName": "datupd",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "ean"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_ListItem_ean",
+            "unique": true,
+            "columnNames": [
+              "ean"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_ListItem_ean` ON `${TABLE_NAME}` (`ean`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5e40c7cccb84642f6aff1688afe7d898')"
+    ]
+  }
+}
